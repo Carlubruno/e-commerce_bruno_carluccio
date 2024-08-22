@@ -1,0 +1,22 @@
+body{
+    background-color: whitesmoke;
+    margin: 0;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 5px 15px;
+    
+
+}
+.grid-item{
+    text-align: center;
+    border: 1px #000;
+    margin: 20px;
+    padding: 50px;
+    width: 45%;
+    background-color: aquamarine;
+}
+.grid-item:hover{
+    background-color: aqua;
+}
