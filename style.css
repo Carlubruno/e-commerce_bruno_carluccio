@@ -1,22 +1,91 @@
 body{
-    background-color: whitesmoke;
-    margin: 0;
+    background-color: #ffffff;
 }
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    gap: 5px 15px;
-    
 
+/* logo /barra  */
+.navbar{
+    
+    background-image: linear-gradient(to right, #ff00bfe5 , #c043a7f3, #f138f198);
+}
+.logo{
+    margin-left: 20px;
+    filter: drop-shadow(0 0 6px #4d4d4d);
+    width: 45px ;
+}
+.navbar-brand>strong{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    margin-left: 20px;
+    text-shadow: 0 2px 3px #130d11f3;
+    color: #ffffff;
+    
+}
+#navbarText ul li>a{
+
+    text-align: left;
+    color: #1a1919;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    font-size: 18px;
+}
+#navbarText ul li>a:hover{
+    font-weight: bold;
+}
+
+
+/*       Contenedores flex */
+
+section{
+    margin-top: 20px;
+}
+.grid-container{
+    padding: 30px;
+    display: grid;
+
+    grid-template-columns: repeat(5fr);
+    gap: 10px;
 }
 .grid-item{
-    text-align: center;
-    border: 1px #000;
-    margin: 20px;
-    padding: 50px;
-    width: 45%;
-    background-color: aquamarine;
+    box-shadow: 0 0 8px #a19f9f;
+    border-top: 1px solid #a8a8a8;
+    margin: 5px;
+    width: 100%;
+    padding: 45px;
+    background-color: #c5c5c5;
 }
-.grid-item:hover{
-    background-color: aqua;
+/*media queries */
+
+@media screen and (min-width: 800px) {
+button{
+    display: none;
+}
+#navbarText{
+    display: block;
+}
+.navbar-brand>strong{
+    
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 33px;
+    margin-left: 30px;
+    text-shadow: 0 2px 3px #130d11f3;
+    color: #ffffff;
+    padding: 10px;
+}
+.logo{
+    width: 65px;
+
+}
+#navbarText ul li>a{
+
+    text-align: left;
+    color: #1a1919;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+    font-size: 24px;
+}
+}
+
+
+@supports not linear-gradient(to right, #ff00bfe5 , #c043a7f3, #f138f198){
+    .navbar{
+        background-color: #ff00bfe5
+    }
 }
