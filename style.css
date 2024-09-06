@@ -49,7 +49,7 @@ section{
 .card{
     box-shadow: 0 0 8px #a19f9f;
     margin: 5px;
-    max-width: 100%;
+    max-width: 98%;
     min-width: 50%;
     max-height: 180px;
     padding: 45px;
@@ -61,54 +61,44 @@ section{
     
     
 }
-.btn{
-    border: 2px solid #f138f198;
-    border-style:dotted;
-    width: 5rem;
-    font-size: 14px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow:  0 0 5px #4d4d4d;
-    position: relative;
-    left: 400px;
-    
-    bottom: 115px;
 
-    transition: all;
-    transition-duration: .6s;
-    
-}
 .product{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 44px;
-    text-decoration:none;
     color: #bf6aaae5;
     text-shadow: 0 0 3px #4d4d4d;
 
 }
 .title{
+    position: relative;
+    bottom: 100px;
+    text-align: center;
     font-family: 'Trebuchet MS';
     font-size: 25px;
     text-overflow: ellipsis;
-    text-shadow: 0 0 1px #7e7c7c;
+    text-shadow: 0 0 2px #7e7c7c;
     text-decoration: none;
 }
 .price{
+    position: relative;
+    bottom: 30px;
     font-size: 18px;
     color: #c043a7f3;
     text-shadow:  0 0 2px #8d608d63;
-    text-align: righ;
+    text-align: right;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.grid-item:hover{
+.card:hover{
     border-style: dotted;
-    padding: 47px;
+    padding: 46px;
+    
 }
-.btn:hover{
-    border: 2px solid #f138f198;
-    font-style:oblique;
-    font-size: 15px;
+.card img{
+    box-shadow:  0 0 3px #6b6767;
 }
+
+
 /*media queries */
 
 @media screen and (min-width: 800px) {

@@ -64,3 +64,25 @@
 //         alert("Acertaste!");
 //     }
 
+
+// .btn:hover{
+//     border: 2px solid #f138f198;
+//     font-style:oblique;
+//     font-size: 15px;
+// }
+// .btn{
+//     border: 2px solid #f138f198;
+//     border-style:dotted;
+//     width: 5rem;
+//     font-size: 14px;
+//     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+//     text-shadow:  0 0 5px #4d4d4d;
+//     position: relative;
+//     left: 400px;
+    
+//     bottom: 115px;
+
+//     transition: all;
+//     transition-duration: .6s;
+    
+// }
