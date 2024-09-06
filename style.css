@@ -1,6 +1,8 @@
 body{
+    
     background-color: #ffffff;
 }
+
 
 /* logo /barra  */
 .navbar{
@@ -37,20 +39,75 @@ body{
 section{
     margin-top: 20px;
 }
-.grid-container{
+#container{
     padding: 30px;
     display: grid;
 
     grid-template-columns: repeat(5fr);
     gap: 10px;
 }
-.grid-item{
+.card{
     box-shadow: 0 0 8px #a19f9f;
-    border-top: 1px solid #a8a8a8;
     margin: 5px;
-    width: 100%;
+    max-width: 100%;
+    min-width: 50%;
+    max-height: 180px;
     padding: 45px;
     background-color: #c5c5c5;
+    border: 2px solid #f138f198;
+    border-style:none;
+    transition-property: all;
+    transition-duration: .2s;
+    
+    
+}
+.btn{
+    border: 2px solid #f138f198;
+    border-style:dotted;
+    width: 5rem;
+    font-size: 14px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow:  0 0 5px #4d4d4d;
+    position: relative;
+    left: 400px;
+    
+    bottom: 115px;
+
+    transition: all;
+    transition-duration: .6s;
+    
+}
+.product{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 44px;
+    text-decoration:none;
+    color: #bf6aaae5;
+    text-shadow: 0 0 3px #4d4d4d;
+
+}
+.title{
+    font-family: 'Trebuchet MS';
+    font-size: 25px;
+    text-overflow: ellipsis;
+    text-shadow: 0 0 1px #7e7c7c;
+    text-decoration: none;
+}
+.price{
+    font-size: 18px;
+    color: #c043a7f3;
+    text-shadow:  0 0 2px #8d608d63;
+    text-align: righ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.grid-item:hover{
+    border-style: dotted;
+    padding: 47px;
+}
+.btn:hover{
+    border: 2px solid #f138f198;
+    font-style:oblique;
+    font-size: 15px;
 }
 /*media queries */
 
