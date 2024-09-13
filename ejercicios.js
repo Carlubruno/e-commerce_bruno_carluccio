@@ -86,3 +86,28 @@
 //     transition-duration: .6s;
     
 // }
+
+
+    // function estacion1(){
+
+    //     let dia = Number(prompt("¿Que dia es?"));
+    //     let mes = Number(prompt("¿En que mes estas?"));
+        
+    //     let estacion;
+    // if ((mes === 12 && dia >= 21) || mes === 1 || mes === 2 || (mes === 3 && dia < 21)) {
+    //     estacion = "Verano";
+    // }else if ((mes === 3  && dia >= 21) || mes === 4 || mes === 5 || (mes === 6 && dia < 21)) {
+    //     estacion = "Otoño";
+    // }else if ((mes === 6 && dia >= 21) || mes === 7 || mes === 8 || (mes === 9 && dia < 21)) {
+    //     estacion = "Invierno";
+    // }else if ((mes === 9 && dia >= 21) || mes === 10 || mes === 11 || (mes === 12 && dia < 21)) {
+    //     estacion = "Primavera";
+    // }else if (año > 2030)
+    // }else{
+    //     alert("introduzca datos correctos")
+    // }
+    // return estacion;
+    // }
+
+    // const estacionFinal = estacion1();
+    // alert(estacionFinal);
