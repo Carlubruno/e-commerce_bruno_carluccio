@@ -9,8 +9,8 @@
     for(let i = 1; i < 10; i++){
         btn = "Ver más";
         if(i == 1){
-            title = "BMW M5"
-            price = "$500.000"
+            title = "BMW Serie 3"
+            price = "$50.000"
         } else if (i == 2){
             title = "Gaston Martin"
             price = "$800.000"
@@ -36,14 +36,19 @@
             title = "Masserati"
             price = "$700.000"
         }
+    
 
         
     array.push(`<div  class="card"> <img src="https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/${i}.jpg" alt="" width="170px">
         <h1 class="title" id="#card_title">${title}</h1>
         <p class="price" id="price">${price}</p>
-        <button class="btn" type="button">${btn}</button>
-        </div>  `);
-    document.querySelector(".countainer").innerHTML = array.join().replaceAll(",", "");;
+        <a href=productos.html ><button class="btn" type="button">${btn}</button></a>
+        </div> `);
     }
-}
+    
+    
+        document.querySelector(".countainer").innerHTML = array.join().replaceAll(",", "");
+    }
+    
+
     stock();
