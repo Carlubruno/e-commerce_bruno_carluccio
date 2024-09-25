@@ -16,15 +16,31 @@ const producto = new Producto(
     "Un. Disponible/s: 3", "https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/1.jpg"
 );
 
-
-document.querySelector("main").innerHTML = contenidoCard = `
-    <div class="contenido">
+const producto2 = new Producto(
+    "",
+    "Chevrolet 1955",
+    "El Chevrolet 1955 es símbolo de la era dorada de los autos estadounidenses, apreciado tanto por su ingeniería como por su estilo atemporal, lo que lo hace ideal para una tienda que ofrezca productos relacionados con autos clásicos o la cultura vintage.",
+    "Valor: $100.000",
+    "Un. Disponible/s: 1", 
+    "https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/7.jpg"
+)
+    
+document.querySelector(".product").innerHTML = contenidoCard =
+    `<div class="contenido">
         <img class="logo" src="${producto.logo}" >
         <h1 class="title">${producto.titulo}</h1>
         <img class="image" src="${producto.imagen}" >
         <p class="detail">${producto.detalle}</p>
         <p>${producto.precio}</p>
         <p>${producto.stock}</p>
-    </div>
-`;
+    </div> `;
 
+    document.querySelector("product2").innerHTML = contenidoCard =
+    `<div class="contenido">
+        <img class="logo" src="${producto2.logo}" >
+        <h1 class="title">${producto2.titulo}</h1>
+        <img class="image" src="${producto2.imagen}" >
+        <p class="detail">${producto2.detalle}</p>
+        <p>${producto2.precio}</p>
+        <p>${producto2.stock}</p>
+    </div> `;

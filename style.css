@@ -6,15 +6,23 @@ body{
 
 /* logo /barra  */
 .navbar{
-    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
     background-image: linear-gradient(to right, #ff00bfe5 , #c043a7f3, #f138f198);
 }
-.logo{
-    margin-left: 20px;
+.logo img{
+    width: 85px;
+    justify-content: start;
+    margin-left: 30px;
+    z-index: 100;
     filter: drop-shadow(0 0 6px #4d4d4d);
-    width: 45px ;
+    
 }
-.navbar-brand>strong{
+.navbar-brand{
+    align-items: center;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 25px;
     margin-left: 20px;
@@ -22,6 +30,27 @@ body{
     color: #ffffff;
     
 }
+header{
+    display: flex;
+    list-style-type: none;
+}
+.categories{
+    flex-direction: row;    
+    align-items:first baseline;
+    justify-content:flex-start;
+    text-align:center;
+    text-decoration: none;
+    margin: 0;
+}
+.categoryText{
+    margin: 5px 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none !important;
+    text-decoration-line: none;
+    color: #1a1919;
+}
+
+
 #navbarText ul li>a{
 
     text-align: left;

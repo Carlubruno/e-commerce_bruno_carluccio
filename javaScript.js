@@ -42,7 +42,7 @@
     array.push(`<div  class="card"> <img src="https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/${i}.jpg" alt="" width="170px">
         <h1 class="title" id="#card_title">${title}</h1>
         <p class="price" id="price">${price}</p>
-        <a href=productos.html ><button class="btn" type="button">${btn}</button></a>
+        <a href=/Productos/productos.html ><button class="btn" type="button">${btn}</button></a>
         </div> `);
     }
     
