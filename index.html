@@ -8,15 +8,33 @@
     <script src="javaScript.js" async ></script>
     <script src="navbar.js" async></script>
     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=cancel" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
 </head>
 <body>  
   <div class="navbar">
     <div class="logo"><img src="/images/pulseada.png" alt="logo"></div>
     <div><h2 class="navbar-brand">Mercado Preso</h2></div>
+    <div class="search">
+      <input placeholder="Buscar..." class="input" type="text">
+        <button class="btnFilter" onclick="filter()" id="filter-btn"><span class="material-symbols-outlined">
+          search
+          </span></button>
+        <button class="btnClean" id="clean-btn">X</button></div>
   </div>
     <header>
-
+      <div class="categoria">
+        <button onclick="productos()" id="todo">Todos</button>
+    <button id="sedanes">Sedanes</button>
+    <button id="deportivo">Deportivo</button>
+    <button id="hyper">Hypercar</button>
+    <button id="antiguo">Antiguo</button>
+      </div>
+      
     </header>
+    
+
+
     <!---Contenedor-->
     <h1 class="product" id="products"> </h1>
     <section class="container">
