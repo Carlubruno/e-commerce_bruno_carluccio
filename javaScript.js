@@ -53,7 +53,7 @@
         Stock: 1,
         car_condition: "Usado"
         ,
-        categoria: "Antiguos"
+        categoria: "Antiguo"
       }, {
         id: 6,
         title: "Lamborghini",
@@ -138,6 +138,45 @@
         }       
       //BOTON DE BORRAR INPUT 
       btnClean.addEventListener("click", () => input.value = "");
+
+
+
+      //CATEGORIAS
+      
+function todos(category){
+  if(category == `todos`){
+    let cards = data.map((productos) => 
+      `<div  class="card"> <img src="${productos.img}" alt="" width="170px">
+          <h1 class="title" id="card_title">${productos.title}</h1>
+          <p class="detail" id="detail">${productos.detail}</p>
+          <p class="price" id="price">$${productos.price}</p>
+          <p class="stock" id="stock">${productos.Stock}Un.</p>
+          <p class="condition" id="condition">${productos.car_condition}</p>
+          <a href="/Productos/productos.html?prod=${productos.id}" ><button class="btn" type="button">Ver mas</button></a></div> `
+      );
+          document.querySelector(".container").innerHTML = cards.join().replaceAll(",", "");
+  
+    console.log("todos")
+  }
+ const filterCategory = data.filter(item => item.categoria === category)
+        if(filterCategory.length > 1){
+            
+      let cards =  filterCategory.map((item) => 
+        
+          `<div  class="card"> <img src="${item.img}" alt="" width="170px">
+          <h1 class="title" id="card_title">${item.title}</h1>
+          <p class="detail" id="detail">${item.detail}</p>
+          <p class="price" id="price">$${item.price}</p>
+          <p class="stock" id="stock">${item.Stock}Un.</p>
+          <p class="condition" id="condition">${item.car_condition}</p>
+          <a href="/Producto/producto.html?prod=${item.id}" ><button class="btn" type="button">Ver mas</button></a></div> `
+      );
+          document.querySelector(".container").innerHTML = cards.join().replaceAll(",", "");
+            
+          }else{
+            console.log("producto no encontrado")
+          }
+    }
     
 
       

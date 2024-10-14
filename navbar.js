@@ -10,13 +10,11 @@
 
 // }
 // document.querySelector('header').innerHTML = menu.join().replaceAll(",", "");
+//ARREGLO DE PRODUCTOS & MAPEO
 
 let btnTodo = document.getElementById("todo");
 let btnSedan = document.getElementById("sedanes");
 let btnDepor = document.getElementById("deportivo");
-let btnHyper = document.getElementById("hyper")
-let btnAntiguo = document.getElementById("antiguo")
-
-
-
+let btnHyper = document.getElementById("hyper");
+let btnAntiguo = document.getElementById("antiguo");
 
