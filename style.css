@@ -169,7 +169,7 @@ a .categoryText{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas flexibles */
     gap: 20px;
-    padding: 30px;
+    padding: 20px;
     direction: ltr;
     grid-template-rows: auto;
     background-color: #ededed;
@@ -182,7 +182,7 @@ a .categoryText{
     background-color: #ffff;
     border-radius: 10px;
     box-sizing: border-box;
-    min-height: 200px;
+    max-height: auto;
     text-align: center; /* Centrar el texto */
     border: 1px solid #34437d7f;
     transition: all;

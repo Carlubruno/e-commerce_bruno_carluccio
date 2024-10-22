@@ -1,29 +1,3 @@
-// class Producto {
-//     constructor(logo, titulo, detalle, precio, stock, imagen) {
-//         this.logo = logo;
-//         this.titulo = titulo;
-//         this.detalle = detalle;
-//         this.precio = precio;
-//         this.stock = stock;
-//         this.imagen = imagen;
-//     }
-// }
-
-// const producto = new Producto(
-//     "https://static.vecteezy.com/system/resources/previews/019/956/127/non_2x/bmw-transparent-bmw-free-free-png.png",
-//     "BMW Serie 3",
-//     "Un. Disponible/s: 3", "https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/1.jpg"
-// );
-
-// const producto2 = new Producto(
-//     "",
-//     "Chevrolet 1955",
-//     "Valor: $100.000",
-//     "Un. Disponible/s: 1", 
-//     "https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/7.jpg"
-// )
-    
-
 
 const data = [{
   logo: "https://static.vecteezy.com/system/resources/previews/019/956/127/non_2x/bmw-transparent-bmw-free-free-png.png",
