@@ -4,7 +4,39 @@ body{
     background-color: #ededed;
 }
 
+/* LOGIN NAVBAR*/
+a .login{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid #1e2548;
+    width: 150px;
+    margin-left: 20px;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    background-color: #19203a;
+    color: #ffffff;
+    border-radius: 5px;
+    filter: drop-shadow(2px 0 0 #0c1323);
+    transition: all 0.3s ease-in-out;
+}
+a .logout{
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid #1e2548;
+    width: 150px;
+    background-color: #19203a;
+    color: #ffffff;
+    border-radius: 5px;
+    filter: drop-shadow(2px 0 0 #0c1323);
+    transition: all 0.3s ease-in-out;
 
+}
+a .login:hover{
+    transform: scale(1.1);
+    box-shadow: 5px  0 0 #1a1919;
+}
 /* logo /barra  */
 .navbar{
     display: flex;

@@ -96,11 +96,18 @@ const data = [{
       <p class="price">Valor: $${filterCard.price}</p>
       <p class="condition">Condicion: ${filterCard.car_condition}</p>
       <p class="stock">Unidades disponibles: ${filterCard.Stock}</p>
+      ${localStorage.getItem("email") ? `<button class="comprar" type="button" id="comprarbtn">Comprar</button>` : `<button onclick="link()" class="comprar" type="button" id="comprarbtn">Iniciar Sesion para Comprar</button>`}
+
+      <input class="count" type="number" id="count" name="cantidad" min="0" max="50" step="1">
+
+
   </div> `;
       
     }else{
       document.querySelector("main").innerText = "no encontrado";
     }
     
-
+    function link(){
+      window.location.href = "/login/login.html"
+    }
 

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <script src="/login/authentic.js"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
@@ -9,6 +11,7 @@
    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
    crossorigin="anonymous"
   />
+  <link rel="stylesheet" href="/login/loginStyle.css">
   <style>
    body {
     display: grid;
@@ -21,20 +24,21 @@
   
 
  </head>
- <body>
-  <form>
+ <body id="login">
+  <form id="form">
    <div class="mb-3">
-    <label class="form-label">Email address</label>
-    <input id="email" type="email" class="form-control" />
+    <label class="form-label">Email</label>
+    <input class="input" id="email" type="email" class="form-control" name="email" />
    </div>
    <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input id="password" type="password" class="form-control" />
+    <label class="form-label">Contraseña</label>
+    <input class="input" name="password" id="password" type="password" class="form-control" />
    </div>
-   <button id="send" type="button" onclick="login()" class="btn btn-primary">Submit</button>
+   <button id="send" type="submit" class="btn-primary">Submit</button>
   </form>
-  <a href="/index.html">index</a>
+
   
  </body>
  <script src="log.js"></script>
+ <script src="authentic.js"></script>
 </html>

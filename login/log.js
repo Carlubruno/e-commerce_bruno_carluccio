@@ -2,17 +2,24 @@ const USER_LOG = {
     email: "rosbruno1234@gmail.com",
     password: "hola"
 };
-function login (){
-    let password = document.querySelector("#password").value;
-    let email = document.querySelector("#email").value;
+
+    const submit = document.querySelector("#form")
+
+
+const login = ev => {
+    console.log("click")
+    ev.preventDefault()
+    let password = ev.target.elements.password.value;
+    let email = ev.target.elements.email.value;
     
     if(password === USER_LOG.password && email === USER_LOG.email){
-        localStorage.setItem("password", USER_LOG.password)
         localStorage.setItem("email", USER_LOG.email)
         console.log("email y contraseña correctos");
         window.location.href = "/index.html";
+        
 
     }else{
+
         alert("Contraseña Incorrecta")
         password.value = "";
         email.value = "";
@@ -20,3 +27,4 @@ function login (){
     }
     
 }
+submit.addEventListener("submit", login)
