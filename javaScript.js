@@ -189,6 +189,4 @@ function todos(category){
     }
 
 
-
-
-      
+ 

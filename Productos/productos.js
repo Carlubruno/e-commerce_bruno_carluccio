@@ -96,13 +96,17 @@ const data = [{
       <p class="price">Valor: $${filterCard.price}</p>
       <p class="condition">Condicion: ${filterCard.car_condition}</p>
       <p class="stock">Unidades disponibles: ${filterCard.Stock}</p>
-      ${localStorage.getItem("email") ? `<button class="comprar" type="button" id="comprarbtn">Comprar</button>` : `<button onclick="link()" class="comprar" type="button" id="comprarbtn">Iniciar Sesion para Comprar</button>`}
-
-      <input class="count" type="number" id="count" name="cantidad" min="0" max="50" step="1">
-
+      
+      ${localStorage.getItem("email") ? `<span id="stock" class="cant">
+        <h4 class="hstock">Cantidad:</h4>
+        <button class="less" id="decreasebtn" onclick="decrease()">-</button>
+        <input readonly class="inputcount" type="number" id="count" value="1">
+        <button class="more" id="increasebtn" onclick="increase()">+</button>
+    </span>
+    <div class="comprarflex"><button class="comprar" type="button" id="comprarbtn" onclick="addItem()">Agregar al carrito</button></div>` : `<button onclick="link()" class="comprar" type="button" id="comprarbtn">Iniciar Sesion para Comprar</button>`}
 
   </div> `;
-      
+
     }else{
       document.querySelector("main").innerText = "no encontrado";
     }
@@ -110,4 +114,67 @@ const data = [{
     function link(){
       window.location.href = "/login/login.html"
     }
+
+  
+    let counter = document.querySelector("#count");
+
+    let increaseBtn = document.querySelector("#increasebtn")
+    function increase(){
+
+      counter.value = Number(counter.value) + 1;
+      if(counter.value > filterCard.Stock)
+      counter.value = 1;
+    }
+
+    let decreaseBtn = document.querySelector("#decreasebtn")
+    function decrease(){
+      if(counter.value > 1){
+      counter.value = Number(counter.value) - 1;
+      }
+      else{
+        counter.value = filterCard.Stock;
+      }
+    }
+
+
+        
+    let navBar = document.querySelector("#cart");
+    let carBuy = `<div> ${localStorage.getItem("email") ? `<li>hola, ${localStorage.getItem("email")}</li>
+            <a href="/cart/cart.html"><span class="carrito" id="cart"><img width="55px" src="/images/carrito.jpg" alt="" class="cartimg"></span></a>
+            <b class="cantidad" id="quantity">${localStorage.getItem("quantity")}</b>` : `<h1>Inicia sesion</h1>`}</div>`
+
+            navBar.innerHTML = carBuy;
+
+
+
+    function addItem(){
+      let cart = JSON.parse(localStorage.getItem("cart"));
+      const idProduct = Number(window.location.search.split("=")[1]);
+      const product = data.find(item => item.id === idProduct)
+      const existeIdEnCart = cart.some(item => item.product.id === idProduct) //some es si existe devuelve true
+
+      if(existeIdEnCart){
+        cart = cart.map(
+          item => {
+      if(item.product.id === idProduct){
+        return {...item, quantity: item.quantity + Number(counter.value)}
+
+      }else{
+        return item
+      }
+      })
+      }else{
+        cart.push({product: product, quantity: Number(counter.value) })
+      }
+
+      console.log(cart)
+      localStorage.setItem("cart", JSON.stringify(cart))
+      counter.value = "1"
+
+      let quantity = cart.reduce((acumulado, actual) => acumulado + actual.quantity, 0)
+      localStorage.setItem("quantity", JSON.stringify(quantity))
+    }
+    
+
+
 

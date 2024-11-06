@@ -1,0 +1,51 @@
+.navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    background-image: linear-gradient(to right, #0c1323 , #1c233f,#50577f,#162949,#1e2548,#223458, #242d50, #2d446e);
+}
+.logo img{
+    width: 95px;
+    justify-content: start;
+    margin-left: 30px;
+    z-index: 100;
+    filter: drop-shadow(0 0 6px #4d4d4d);
+    
+}
+.navbar-brand{
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 45px;
+    margin-left: 20px;
+    text-shadow: 0 2px 3px #130d11f3;
+    color: #ffffff;
+    
+}
+
+.cart{
+    list-style: none;
+    color: #fff;
+margin-left: 15px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+list-style: none;
+color: #fff;
+font-size: 16px;
+transition: all 0.5s;
+transition-timing-function: ease-in-out;
+}
+.cartimg{
+width: 65px;
+border-radius: 50%;
+}
+.cartimg:hover{
+transform: scale(1.2);
+filter: brightness(2);
+
+}
+
+
+.img{
+    width: 250px;
+}

@@ -20,6 +20,7 @@ a .login{
     transition: all 0.3s ease-in-out;
 }
 a .logout{
+    cursor: pointer;
     text-align: center;
     padding: 20px;
     font-size: 16px;
@@ -31,12 +32,18 @@ a .logout{
     border-radius: 5px;
     filter: drop-shadow(2px 0 0 #0c1323);
     transition: all 0.3s ease-in-out;
+    margin-left: 20px;
 
 }
 a .login:hover{
     transform: scale(1.1);
     box-shadow: 5px  0 0 #1a1919;
 }
+a .logout:hover{
+    transform: scale(1.1);
+    box-shadow: 5px  0 0 #1a1919;
+}
+
 /* logo /barra  */
 .navbar{
     display: flex;
@@ -63,9 +70,31 @@ a .login:hover{
     color: #ffffff;
     
 }
+/* CARRITO */
+.carrito{
+    margin-left: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style: none;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.cartimg{
+    width: 65px;
+    border-radius: 50%;
+}
+.cartimg:hover{
+    transform: scale(1.2);
+    filter: brightness(2);
+
+}
 .search{
     margin-left: auto;
 }
+
+
+
 header{
     background-image: url(/images/BANNER.png);
     background-repeat: no-repeat;
