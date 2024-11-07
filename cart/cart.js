@@ -6,7 +6,7 @@ function getCart(cards){
       <div class="card-body">
        <div class="d-flex align-items-start border-bottom pb-3">
         <div class="me-4">
-         <img widht="20px"
+         <img class="img"
           src="${card.product.img}"
           alt=""
           class="avatar-lg rounded"
@@ -64,8 +64,7 @@ function clearCart(){
     getCart([]);
     totalCart([]);
     
-    let quantityTag = document.querySelector("#cart");
-    quantityTag.innerText = "0";
+    localStorage.setItem("quantity", 0)
 }
 
 function deleteItem(id){

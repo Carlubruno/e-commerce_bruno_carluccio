@@ -97,13 +97,14 @@ const data = [{
       <p class="condition">Condicion: ${filterCard.car_condition}</p>
       <p class="stock">Unidades disponibles: ${filterCard.Stock}</p>
       
-      ${localStorage.getItem("email") ? `<span id="stock" class="cant">
+      ${localStorage.getItem("email") ? `<div class="comprarflex"><span id="stock" class="cant">
         <h4 class="hstock">Cantidad:</h4>
         <button class="less" id="decreasebtn" onclick="decrease()">-</button>
         <input readonly class="inputcount" type="number" id="count" value="1">
         <button class="more" id="increasebtn" onclick="increase()">+</button>
-    </span>
-    <div class="comprarflex"><button class="comprar" type="button" id="comprarbtn" onclick="addItem()">Agregar al carrito</button></div>` : `<button onclick="link()" class="comprar" type="button" id="comprarbtn">Iniciar Sesion para Comprar</button>`}
+    </span><button class="comprar" type="button" id="comprarbtn" onclick="addItem()">Agregar al carrito <span class="material-symbols-outlined">
+add_shopping_cart
+</span></button></div>` : `<button onclick="link()" class="comprar" type="button" id="comprarbtn">Iniciar Sesion para Comprar</button>`}
 
   </div> `;
 
@@ -148,31 +149,81 @@ const data = [{
 
 
     function addItem(){
-      let cart = JSON.parse(localStorage.getItem("cart"));
-      const idProduct = Number(window.location.search.split("=")[1]);
-      const product = data.find(item => item.id === idProduct)
-      const existeIdEnCart = cart.some(item => item.product.id === idProduct) //some es si existe devuelve true
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+      });
+      swalWithBootstrapButtons.fire({
+        title: "Desea agregar al carrito?",
+        text: "Puedes elinarlo del carrito en cualquier momento!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Agregar!",
+        cancelButtonText: "No, cancelar!",
+        reverseButtons: true
+      }).then((result) => {
+        add();
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire({
+            
+            title: "Agregado!",
+            text: "Tu producto fue agregado al carrito.",
+            icon: "success"
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Accion cancelada!",
+            text: "Sigue buscando! :)",
+            icon: "error"
+          });
+        }
+      });
+      function add(){
+        Toastify({
 
-      if(existeIdEnCart){
-        cart = cart.map(
-          item => {
-      if(item.product.id === idProduct){
-        return {...item, quantity: item.quantity + Number(counter.value)}
+          text: "Producto Agregado!",
+          
+          duration: 3000
+          
+          }).showToast();
+          
+                let cart = JSON.parse(localStorage.getItem("cart"));
+                const idProduct = Number(window.location.search.split("=")[1]);
+                const product = data.find(item => item.id === idProduct)
+                const existeIdEnCart = cart.some(item => item.product.id === idProduct) //some es si existe devuelve true
+          
+                if(existeIdEnCart){
+                  cart = cart.map(
+                    item => {
+                if(item.product.id === idProduct){
+                  return {...item, quantity: item.quantity + Number(counter.value)}
+          
+                }else{
+                  return item
+                }
+                })
+                }else{
+                  cart.push({product: product, quantity: Number(counter.value) })
+                }
+          
+                console.log(cart)
+                localStorage.setItem("cart", JSON.stringify(cart))
+                counter.value = "1"
+          
+                let quantity = cart.reduce((acumulado, actual) => acumulado + actual.quantity, 0)
+                localStorage.setItem("quantity", JSON.stringify(quantity))
 
-      }else{
-        return item
       }
-      })
-      }else{
-        cart.push({product: product, quantity: Number(counter.value) })
-      }
 
-      console.log(cart)
-      localStorage.setItem("cart", JSON.stringify(cart))
-      counter.value = "1"
+      
 
-      let quantity = cart.reduce((acumulado, actual) => acumulado + actual.quantity, 0)
-      localStorage.setItem("quantity", JSON.stringify(quantity))
+
     }
     
 
