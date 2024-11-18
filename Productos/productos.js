@@ -15,7 +15,7 @@ const data = [{
   detail: "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, id suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
   img: "https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/2.jpg",
   price: 250000,
-  Stock: 1,
+  Stock: 9,
   car_condition: "Nuevo"
 }, {
   logo: "https://logolook.net/wp-content/uploads/2023/10/AMG-Logo.png",

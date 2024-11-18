@@ -15,7 +15,7 @@ const data = [{
   detail: "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, id suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
   img: "https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/2.jpg",
   price: 250000,
-  Stock: 1,
+  Stock: 9,
   car_condition: "Nuevo"
   ,categoria: "Hypercar"
 
@@ -39,6 +39,9 @@ const data = [{
   price: 72000,
   Stock: 4,
   car_condition: "Nuevo"
+  ,categoria: "Deportivo"
+
+  
 }, {
   logo: "https://logodownload.org/wp-content/uploads/2017/05/ferrari-logo-25.png",
   id: 5,
@@ -48,6 +51,8 @@ const data = [{
   price: 95454,
   Stock: 1,
   car_condition: "Nuevo"
+  ,categoria: "Antiguo"
+
 }, {
   logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT66rq65Hqugr2WpufW2Lwj0wHgj57XvF4HYg&s",
   id: 6,
@@ -57,6 +62,8 @@ const data = [{
   price: 81812,
   Stock: 5,
   car_condition: "Nuevo"
+  ,categoria: "Hypercar"
+
 }, {
   logo: "https://i.pinimg.com/originals/c7/0c/7c/c70c7cd59b67a84f66d33ec3d4432f4a.png",
   id: 7,
@@ -77,6 +84,8 @@ const data = [{
   price: 93662,
   Stock: 5,
   car_condition: "Nuevo"
+  ,categoria: "Deportivo"
+
 }, {
   logo: "https://logos-world.net/wp-content/uploads/2021/04/Maserati-Logo.png",
   id: 9,
@@ -86,6 +95,8 @@ const data = [{
   price: 89470,
   Stock: 8,
   car_condition: "Nuevo"
+  ,categoria: "Hypercar"
+
 }]    
 
 //PRODUCTO TITULO
@@ -111,7 +122,7 @@ const data = [{
     );
         container.innerHTML = cards.join().replaceAll(",", "");
   }
-  dynamicCard(data);
+  
 
 
     //BUSCADOR
@@ -188,5 +199,17 @@ function todos(category){
           }
     }
 
+    let promesaLoading = new Promise((resolve) => {
+      setTimeout(() => {
+        dynamicCard(data);
+      }, 2000);
+  })
+    
+  promiseData.then((dato) => {
+    dynamicCar(data)
 
- 
+  })
+  promiseData.catch((error) => {
+    container.innerHTML = "<h1>Ha ocurrido un error, toque f5 o salga</h1>"
+
+  })

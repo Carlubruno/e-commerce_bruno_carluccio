@@ -29,7 +29,9 @@ function getCart(cards){
           </div>
           <div class="col-md-3">
            <div class="mt-3">
-            <button class="textdelete" onclick="deleteItem(${card.product.id})">Eliminar</button>
+            <button class="btn-delete" onclick="deleteItem(${card.product.id})"><span class="material-symbols-outlined">
+delete
+</span></button>
 
             <p class="text-muted mb-2">Total</p>
             <h5>$${card.product.price * card.quantity}</h5>
@@ -85,3 +87,33 @@ function deleteItem(id){
 function back(){
     window.location.href = "/index.html"
 }
+
+
+function checkoutBtn(){
+    const recurse = {
+        user: localStorage.getItem("email"),
+        items: JSON.parse(localStorage.getItem("cart")),
+    }
+    fetch("https://673ac5fc339a4ce44519130a.mockapi.io/order", {
+        method: "POST",
+        body: JSON.stringify(recurse),
+    })
+    .then(response => response.json())
+    .then(data => {
+        Swal.fire({
+            title: `La orden #${data.id} ha sido procesada exitosamente, ${data.user}.`,
+            text: `100% real`,
+            icon: "success"
+        });
+        
+        clearCart()
+    })
+        
+        .catch(() => 
+            Swal.fire({
+                icon: "error",
+                title: "Uyuyuuy...",
+                text: "Sucedio un error!",
+                footer: '<a href="/cart.html">Volver al carrito</a>'
+            }))
+            }

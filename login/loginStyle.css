@@ -37,3 +37,11 @@ input:focus{
     cursor: pointer;
     outline: none;
 }
+.init{
+    display: none;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    font-size: 15px;
+    
+}

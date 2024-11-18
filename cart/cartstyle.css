@@ -49,3 +49,49 @@ filter: brightness(2);
 .img{
     width: 250px;
 }
+
+.btn-success{
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #223458;
+    box-shadow: 0 0 3px #0c1323;
+
+    margin: 5px;
+    transition: all .2s, ease-in .2s;
+}
+.btn-success:hover{
+    color: #1e2548;
+    transform: scale(1.1);
+    background-color: #ffff;
+    box-shadow: 0 0 5px #0c1323;
+    border-color: #1e2548;
+    border: 2px 2px 2px;
+    text-decoration-style: dotted;
+
+}
+.btn-success:active{
+    background-color: #0c1323;
+    
+}
+.btn-success:focus{
+    background-color: #141e38;
+    color: #fff;
+}
+
+.btn-delete:first-child{
+    border-radius: 25px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: #223458;
+    transition: all .2s, ease-in .2s;
+}
+.btn-delete:hover{
+    color: #1e2548;
+    background-color: #ffff;
+
+}
